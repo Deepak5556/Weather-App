@@ -3,20 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weatherapp/bloc/weather_bloc_bloc.dart';
 import 'package:weatherapp/screens/home_screen.dart';
-
 void main() {
   runApp(const MainApp());
 }
-
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: FutureBuilder<Position>(
-        future: _determinePosition(), // Call the async function
+        future: _determinePosition(), 
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return BlocProvider<WeatherBlocBloc>(
@@ -32,9 +29,7 @@ class MainApp extends StatelessWidget {
             );
           } else {
             return const Scaffold(
-              body: Center(
-                child: CircularProgressIndicator(color: Colors.red),
-              ),
+              body: Center(child: CircularProgressIndicator(color: Colors.red)),
             );
           }
         },

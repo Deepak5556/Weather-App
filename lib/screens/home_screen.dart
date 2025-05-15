@@ -17,17 +17,17 @@ class _HomeScreenState extends State<HomeScreen> {
     if (code >= 200 && code < 300) {
       return Image.asset('assets/1.png');
     } else if (code >= 300 && code < 400) {
-      return Image.asset('assets/2.png'); 
+      return Image.asset('assets/2.png');
     } else if (code >= 500 && code < 600) {
-      return Image.asset('assets/3.png'); 
+      return Image.asset('assets/3.png');
     } else if (code >= 600 && code < 700) {
       return Image.asset('assets/4.png');
     } else if (code >= 700 && code < 800) {
-      return Image.asset('assets/5.png'); 
+      return Image.asset('assets/5.png');
     } else if (code == 800) {
-      return Image.asset('assets/6.png'); 
+      return Image.asset('assets/6.png');
     } else if (code > 800 && code <= 804) {
-      return Image.asset('assets/7.png'); 
+      return Image.asset('assets/7.png');
     } else {
       return Image.asset('assets/1.png');
     }
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return 'Good Morning';
     } else if (hour >= 12 && hour < 17) {
       return 'Good Afternoon';
-    } else if (hour >= 17 && hour < 21) {
+    } else if (hour >= 17 && hour < 20) {
       return 'Good Evening';
     } else {
       return 'Good Night';
@@ -104,6 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BlocBuilder<WeatherBlocBloc, WeatherBlocState>(
                 builder: (context, state) {
                   if (state is WeatherBlocSuccess) {
+                    debugPrint("Inside WeatherBlocSuccess block");
                     return SizedBox(
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height,
@@ -176,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Sunrise',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.w300,
+                                          fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       SizedBox(width: 8),
@@ -205,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Sunset',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.w300,
+                                          fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       SizedBox(width: 8),
@@ -243,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Temp max',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.w300,
+                                          fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       SizedBox(width: 8),
@@ -270,7 +271,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Temp min',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.w300,
+                                          fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       SizedBox(width: 8),
@@ -287,11 +288,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 50),
+                          SizedBox(height: 35),
                           Center(
                             child: Text(
                               'Developed By Deepakkumar V',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
                         ],
@@ -300,7 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   } else {
                     return Center(
                       child: Text(
-                        "Error In State Bro Contact Deepak To Solve This Issue",
+                        "Connecting",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

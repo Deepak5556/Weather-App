@@ -1,4 +1,6 @@
 // ignore: depend_on_referenced_packages
+
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,7 +15,7 @@ class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
       emit(WeatherBlocLoading());
       try {
         WeatherFactory wf = WeatherFactory(
-          "2ef7a5051f80ef54a47d409e400e51e5",
+          "d128ad8a912301d8ed731e7beb00fd45",
           language: Language.ENGLISH,
         );
         Weather weather = await wf.currentWeatherByLocation(
